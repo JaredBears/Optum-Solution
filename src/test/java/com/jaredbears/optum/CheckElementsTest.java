@@ -36,9 +36,11 @@ class CheckElementsTest {
     int[] arrayFour = {4, 10, 8, 5, 9};
     int[] arrayFive = {5, 5, 5, 5, 5};
     int[] arraySix = {1, 3, 5, 7, 9};
+    int[] arraySeven = {1, 3, 5, 7};
+    int[] arrayEight = {1, 3, 6, 7};
     return Stream.of(arguments(arrayOne, false), arguments(arrayTwo, true),
         arguments(arrayThree, true), arguments(arrayFour, true), arguments(arrayFive, false),
-        arguments(arraySix, false));
+        arguments(arraySix, false), arguments(arraySeven, false), arguments(arrayEight, true));
   }
 
 }

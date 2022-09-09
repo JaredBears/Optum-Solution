@@ -14,7 +14,14 @@ public class CheckElements {
       return baseCase(arr);
     } else {
       Arrays.sort(arr);
-      for (int i = 1; i < arr.length - 1; i++) {
+      if(arr.length % 2 == 0 && Math.abs(arr[arr.length-1] - arr[arr.length-2]) == 1) {
+        return true;
+      }
+      /* 
+       * Since the loop only checks every other number, it will miss the last elements if even.
+       * The above conditional takes care of that.  This will cut the time in half, or better.
+       */
+      for (int i = 1; i < arr.length - 1; i+=2) {
         if (Math.abs(arr[i] - arr[i - 1]) == 1 || Math.abs(arr[i] - arr[i + 1]) == 1) {
           return true;
         }
