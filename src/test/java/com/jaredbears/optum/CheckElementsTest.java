@@ -1,7 +1,7 @@
 package com.jaredbears.optum;
 
-import static org.junit.jupiter.params.provider.Arguments.arguments;
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.params.provider.Arguments.arguments;
 import java.util.stream.Stream;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -22,7 +22,7 @@ class CheckElementsTest {
   void testThatSortSolutionWorks(int[] arr, Boolean solution) {
     assertThat(checkElements.sortSolution(arr)).isEqualTo(solution);
   }
-  
+
   @ParameterizedTest
   @MethodSource("com.jaredbears.optum.CheckElementsTest#parameters")
   void testThatHashSolutionWorks(int[] arr, Boolean solution) {
@@ -34,8 +34,11 @@ class CheckElementsTest {
     int[] arrayTwo = {4, 3};
     int[] arrayThree = {11, 1, 8, 12, 14};
     int[] arrayFour = {4, 10, 8, 5, 9};
+    int[] arrayFive = {5, 5, 5, 5, 5};
+    int[] arraySix = {1, 3, 5, 7, 9};
     return Stream.of(arguments(arrayOne, false), arguments(arrayTwo, true),
-        arguments(arrayThree, true), arguments(arrayFour, true));
+        arguments(arrayThree, true), arguments(arrayFour, true), arguments(arrayFive, false),
+        arguments(arraySix, false));
   }
 
 }
